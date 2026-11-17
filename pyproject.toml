@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ia-em-producao"
+version = "1.0.0"
+description = "Laboratórios do curso gratuito IA em Produção: Arquitetura e Segurança (soaone Academy)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Claudecir Miranda" }]
+dependencies = ["pydantic>=2.5", "pytest>=8"]
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=0.40"]
+openai = ["openai>=1.40"]
+
+[tool.setuptools]
+packages = ["soaone_lab"]
+
+[tool.pytest.ini_options]
+testpaths = ["labs", "projeto-final"]
+addopts = "--import-mode=importlib -q"
